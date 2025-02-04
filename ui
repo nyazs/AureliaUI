@@ -1,7 +1,8 @@
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScreenGui"
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.ResetOnSpawn = false
 
 local AureliaBeta = Instance.new("Frame")
 AureliaBeta.Name = "AureliaBeta"
@@ -345,3 +346,6 @@ ImageButton3.BorderColor3 = Color3.new(0, 0, 0)
 ImageButton3.Transparency = 1
 ImageButton3.Image = "rbxassetid://121060399555299"
 ImageButton3.Parent = Execute
+ImageButton3.MouseButton1Click:Connect(function()
+	loadstring(Source.Text)()
+end)
